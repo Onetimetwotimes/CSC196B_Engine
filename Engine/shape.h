@@ -21,8 +21,10 @@ namespace zbe {
 			int s = m_points.size();
 
 			for (int i = 0; i < s; i++) {
-				g.DrawLine(m_points[i].x    + pos.x, m_points[i].y +           pos.y,
-					m_points[(i + 1) % s].x + pos.x, m_points[(i + 1) % s].y + pos.y);
+				zbe::vector g_a = m_points[i] + pos;
+				zbe::vector g_b = m_points[(i + 1) % s];
+				g.DrawLine(g_a.x, g_a.y,
+						   g_b.x, g_b.y);
 			}
 		}
 

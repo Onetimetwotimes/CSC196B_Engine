@@ -8,8 +8,8 @@ namespace zbe {
 			y = 0;
 		}
 		vector(int x, int y) {
-			this->x = x;
-			this->y = y;
+			this->x = (float) x;
+			this->y = (float) y;
 		}
 		vector(int p) {
 			this->x = (float) p;
