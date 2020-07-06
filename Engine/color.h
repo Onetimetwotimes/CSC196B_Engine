@@ -136,9 +136,9 @@ namespace zbe {
 
 		COLORREF pack888() const {
 
-			int r_ = floor((double) r * 255);
-			int g_ = floor((double) g * 255);
-			int b_ = floor((double) b * 255);
+			int r_ = (int) floorf(r * 255.0f);
+			int g_ = (int) floorf(g * 255.0f);
+			int b_ = (int) floorf(b * 255.0f);
 
 			return ((COLORREF)(((BYTE)(r_) | ((WORD)((BYTE)(g_)) << 8)) | (((DWORD)(BYTE)(b_)) << 16)));
 		}
