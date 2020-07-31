@@ -1,9 +1,14 @@
 #include <stdexcept>
 #include "core.h"
-
+#include "input.h"
 #pragma once
+
 namespace zbe {
 	struct Color {
+		~Color() {
+
+		}
+
 		float r, g, b;
 
 		Color() {
@@ -19,7 +24,7 @@ namespace zbe {
 		}
 
 
-		void Set(float r, float g, float b) {
+		void SetRGB(float r, float g, float b) {
 			this->r = r;
 			this->g = g;
 			this->b = b;
@@ -27,7 +32,7 @@ namespace zbe {
 
 #pragma region Array Accessors
 
-		float& operator[](size_t index){
+		float& operator[](size_t index) {
 			switch (index) {
 			case 0:
 				return r;
@@ -56,50 +61,50 @@ namespace zbe {
 #pragma region Arithmetic
 		Color operator+(const Color& c) const {
 			return Color(
-				r + c.r, 
-				g + c.g, 
+				r + c.r,
+				g + c.g,
 				b + c.b);
-		}	
+		}
 		Color operator-(const Color& c) const {
 			return Color(
-				r - c.r, 
-				g - c.g, 
+				r - c.r,
+				g - c.g,
 				b - c.b);
-		}	
+		}
 		Color operator*(const Color& c) const {
 			return Color(
-				r * c.r, 
-				g * c.g, 
+				r * c.r,
+				g * c.g,
 				b * c.b);
-		}	
+		}
 		Color operator/(const Color& c) const {
 			return Color(
-				r / c.r, 
-				g / c.g, 
+				r / c.r,
+				g / c.g,
 				b / c.b);
-		}	
+		}
 		Color operator+(const float s) const {
 			return Color(
-				r + s, 
-				g + s, 
+				r + s,
+				g + s,
 				b + s);
-		}	
+		}
 		Color operator-(const float s) const {
 			return Color(
-				r - s, 
-				g - s, 
+				r - s,
+				g - s,
 				b - s);
-		}		   
+		}
 		Color operator*(const float s) const {
 			return Color(
-				r * s, 
-				g * s, 
+				r * s,
+				g * s,
 				b * s);
-		}		   
+		}
 		Color operator/(const float s) const {
 			return Color(
-				r / s, 
-				g / s, 
+				r / s,
+				g / s,
 				b / s);
 		}
 
@@ -134,6 +139,32 @@ namespace zbe {
 
 #pragma endregion
 
+
+#pragma region IO
+		/*
+		std::ifstream& read(std::ifstream& in) {
+			std::string data = zbe::input::getLine(in);
+			r = zbe::input::getInt(data, ',');
+			g = zbe::input::getInt(data, ',');
+			b = zbe::input::getInt(data, '}');
+			return in;
+		}
+
+		std::ofstream& write(std::ofstream& out) {
+			
+			out << "{"
+				<< r << ", "
+				<< g << ", "
+				<< b << "}"
+				<< "\n";
+			return out;
+		}
+		*/
+#pragma endregion
+
+
+
+
 		COLORREF pack888() const {
 
 			int r_ = (int) floorf(r * 255.0f);
@@ -144,9 +175,9 @@ namespace zbe {
 		}
 		operator COLORREF() const {
 
-			int r_ = floor((double)r * 255);
-			int g_ = floor((double)g * 255);
-			int b_ = floor((double)b * 255);
+			int r_ = (int) floor((double)r * 255);
+			int g_ = (int) floor((double)g * 255);
+			int b_ = (int) floor((double)b * 255);
 
 			return ((COLORREF)(((BYTE)(r_) | ((WORD)((BYTE)(g_)) << 8)) | (((DWORD)(BYTE)(b_)) << 16)));
 		}

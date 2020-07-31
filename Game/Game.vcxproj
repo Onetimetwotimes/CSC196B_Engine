@@ -88,7 +88,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalUsingDirectories>%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
-      <AdditionalIncludeDirectories>D:\User\Libraries\Documents\Visual Studio 2019\Projects\C++\Engine\Engine;D:\User\Libraries\Documents\Visual Studio 2019\Projects\C++\Engine\Middleware\core\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\User\Libraries\Documents\Visual Studio 2019\Projects\C++\Engine\Middleware\fmod\api\core\inc;D:\User\Libraries\Documents\Visual Studio 2019\Projects\C++\Engine\Engine;D:\User\Libraries\Documents\Visual Studio 2019\Projects\C++\Engine\Middleware\core\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -104,7 +104,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalUsingDirectories>%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
-      <AdditionalIncludeDirectories>D:\User\Libraries\Documents\Visual Studio 2019\Projects\C++\Engine\Engine;D:\User\Libraries\Documents\Visual Studio 2019\Projects\C++\Engine\Middleware\core\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\User\Libraries\Documents\Visual Studio 2019\Projects\C++\Engine\Middleware\fmod\api\core\inc;D:\User\Libraries\Documents\Visual Studio 2019\Projects\C++\Engine\Engine;D:\User\Libraries\Documents\Visual Studio 2019\Projects\C++\Engine\Middleware\core\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -122,7 +122,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalUsingDirectories>%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
-      <AdditionalIncludeDirectories>D:\User\Libraries\Documents\Visual Studio 2019\Projects\C++\Engine\Engine;D:\User\Libraries\Documents\Visual Studio 2019\Projects\C++\Engine\Middleware\core\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\User\Libraries\Documents\Visual Studio 2019\Projects\C++\Engine\Middleware\fmod\api\core\inc;D:\User\Libraries\Documents\Visual Studio 2019\Projects\C++\Engine\Engine;D:\User\Libraries\Documents\Visual Studio 2019\Projects\C++\Engine\Middleware\core\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -142,7 +142,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalUsingDirectories>%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
-      <AdditionalIncludeDirectories>D:\User\Libraries\Documents\Visual Studio 2019\Projects\C++\Engine\Engine;D:\User\Libraries\Documents\Visual Studio 2019\Projects\C++\Engine\Middleware\core\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\User\Libraries\Documents\Visual Studio 2019\Projects\C++\Engine\Middleware\fmod\api\core\inc;D:\User\Libraries\Documents\Visual Studio 2019\Projects\C++\Engine\Engine;D:\User\Libraries\Documents\Visual Studio 2019\Projects\C++\Engine\Middleware\core\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -154,7 +154,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Asteroid.cpp" />
+    <ClCompile Include="gamestate.cpp" />
+    <ClCompile Include="Hostile.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="projectile.cpp" />
+    <ClCompile Include="scoreboard.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Asteroid.h" />
+    <ClInclude Include="AsteroidSpawner.h" />
+    <ClInclude Include="gamestate.h" />
+    <ClInclude Include="Hostile.h" />
+    <ClInclude Include="HostileSpawner.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="projectile.h" />
+    <ClInclude Include="scoreboard.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Engine\Engine.vcxproj">
+      <Project>{18ad5bef-2560-444e-9ad8-4d0dfa500837}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
